@@ -1,0 +1,9 @@
+[submodule "microservices/ProcedeMicroservice"]
+	path = microservices/ProcedeMicroservice
+	url = git@github.com:yosr10/ProcedeMicroservice.git
+[submodule "microservices/ModeleMicroservice"]
+	path = microservices/ModeleMicroservice
+	url = git@github.com:yosr10/ModeleMicroservice.git
+[submodule "microservices/IngredientsMicroservice"]
+	path = microservices/IngredientsMicroservice
+	url = git@github.com:yosr10/IngredientsMicroservice.git
