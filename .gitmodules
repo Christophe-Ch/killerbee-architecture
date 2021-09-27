@@ -1,9 +1,9 @@
-[submodule "microservices/ProcedeMicroservice"]
-	path = microservices/ProcedeMicroservice
-	url = git@github.com:yosr10/ProcedeMicroservice.git
-[submodule "microservices/ModeleMicroservice"]
-	path = microservices/ModeleMicroservice
-	url = git@github.com:yosr10/ModeleMicroservice.git
-[submodule "microservices/IngredientsMicroservice"]
-	path = microservices/IngredientsMicroservice
-	url = git@github.com:yosr10/IngredientsMicroservice.git
+[submodule "submodules/Killerbee-ms-modele"]
+	path = submodules/Killerbee-ms-modele
+	url = git@github.com:yosr10/Killerbee-ms-modele.git
+[submodule "submodules/Killerbee-ms-procede"]
+	path = submodules/Killerbee-ms-procede
+	url = git@github.com:yosr10/Killerbee-ms-procede.git
+[submodule "submodules/Killerbee-ms-ingredients"]
+	path = submodules/Killerbee-ms-ingredients
+	url = git@github.com:yosr10/Killerbee-ms-ingredients.git
