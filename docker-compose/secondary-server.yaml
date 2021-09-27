@@ -1,0 +1,10 @@
+version: "3"
+services:
+  ms-reverse-proxy:
+    image: traefik
+    volumes:
+      - ./ms-reverse-proxy/traefik.yaml:/traefik.yaml
+      - ./ms-reverse-proxy/conf:/traefik/conf
+
+  ms-a:
+    build: ./ms-a

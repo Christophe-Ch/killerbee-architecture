@@ -1,0 +1,10 @@
+entryPoints:
+  websecure:
+    address: :443
+
+providers:
+  file:
+    directory: /traefik/conf
+
+serversTransport:
+  insecureSkipVerify: true
