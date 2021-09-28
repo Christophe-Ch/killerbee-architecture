@@ -6,6 +6,14 @@ services:
       - 443:443
 
   # Microservices
+  ms-auth:
+    build: ../microservices/ms-auth/php
+    volumes:
+      - ../microservices/ms-auth/php/vhosts:/etc/apache2/sites-enabled
+      - ../microservices/ms-auth/:/var/www
+      - ../microservices/ms-auth/php/ssl:/etc/ssl
+    restart: always
+  
   ms-ingredient:
     build: ../microservices/ms-ingredient/php
     volumes:

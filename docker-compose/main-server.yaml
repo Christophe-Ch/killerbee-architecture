@@ -8,10 +8,23 @@ services:
       - ../main-reverse-proxy/traefik.yaml:/traefik.yaml
       - ../main-reverse-proxy/conf:/traefik/conf
 
+  front:
+    build: ../front
+    volumes:
+      - ../front/ssl:/etc/nginx/certs
+
   ms-gateway:
     build: ../ms-gateway
 
   # Microservices
+  ms-auth:
+    build: ../microservices/ms-auth/php
+    volumes:
+      - ../microservices/ms-auth/php/vhosts:/etc/apache2/sites-enabled
+      - ../microservices/ms-auth/:/var/www
+      - ../microservices/ms-auth/php/ssl:/etc/ssl
+    restart: always
+  
   ms-ingredient:
     build: ../microservices/ms-ingredient/php
     volumes:
