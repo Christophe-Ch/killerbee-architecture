@@ -7,3 +7,6 @@
 [submodule "microservices/ms-procede/app"]
 	path = microservices/ms-procede/app
 	url = git@github.com:yosr10/Killerbee-ms-procede.git
+[submodule "ms-gateway"]
+	path = ms-gateway
+	url = git@github.com:Christophe-Ch/killerbee-api-gateway.git

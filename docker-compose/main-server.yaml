@@ -1,18 +1,19 @@
 version: "3"
 services:
-  # main-reverse-proxy:
-  #   image: traefik
-  #   ports:
-  #     - 443:443
-  #   volumes:
-  #     - ../main-reverse-proxy/traefik.yaml:/traefik.yaml
-  #     - ../main-reverse-proxy/conf:/traefik/conf
+  main-reverse-proxy:
+    image: traefik
+    ports:
+      - 443:443
+    volumes:
+      - ../main-reverse-proxy/traefik.yaml:/traefik.yaml
+      - ../main-reverse-proxy/conf:/traefik/conf
+
+  ms-gateway:
+    build: ../ms-gateway
 
   # Microservices
   ms-ingredient:
     build: ../microservices/ms-ingredient/php
-    ports:
-      - "443:443"
     volumes:
       - ../microservices/ms-ingredient/php/vhosts:/etc/apache2/sites-enabled
       - ../microservices/ms-ingredient/:/var/www
@@ -21,8 +22,6 @@ services:
   
   ms-modele:
     build: ../microservices/ms-modele/php
-    ports:
-      - "444:443"
     volumes:
       - ../microservices/ms-modele/php/vhosts:/etc/apache2/sites-enabled
       - ../microservices/ms-modele/:/var/www
@@ -31,8 +30,6 @@ services:
   
   ms-procede:
     build: ../microservices/ms-procede/php
-    ports:
-      - "446:443"
     volumes:
       - ../microservices/ms-procede/php/vhosts:/etc/apache2/sites-enabled
       - ../microservices/ms-procede/:/var/www

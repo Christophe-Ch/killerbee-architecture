@@ -13,7 +13,7 @@ http:
     api-service:
       loadBalancer:
         servers:
-          - url: https://ms-reverse-proxy
+          - url: https://ms-gateway
     front-service:
       loadBalancer:
         servers:
