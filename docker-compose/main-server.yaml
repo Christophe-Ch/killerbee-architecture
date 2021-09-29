@@ -21,13 +21,9 @@ services:
     build: ../microservices/ms-auth
     restart: always
 
-  # ms-ingredient:
-  #   build: ../microservices/ms-ingredient/php
-  #   volumes:
-  #     - ../microservices/ms-ingredient/php/vhosts:/etc/apache2/sites-enabled
-  #     - ../microservices/ms-ingredient/:/var/www
-  #     - ../microservices/ms-ingredient/php/ssl:/etc/ssl
-  #   restart: always
+  ms-ingredient:
+    build: ../microservices/ms-ingredient
+    restart: always
 
   # ms-modele:
   #   build: ../microservices/ms-modele/php
