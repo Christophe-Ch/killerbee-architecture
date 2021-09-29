@@ -1,7 +1,9 @@
 const { Sequelize } = require("sequelize");
 
-const sequelize = new Sequelize("killerbee", "sa", process.env.MSSQL_PASSWORD, {
-  host: "192.168.1.62",
+console.log("pass", process.env.MSSQL_PASSWORD)
+
+const sequelize = new Sequelize(process.env.MSSQL_DB, process.env.MSSQL_USERNAME, process.env.MSSQL_PASSWORD, {
+  host: process.env.MSSQL_HOST,
   dialect: "mssql",
   define: {
     timestamps: false,
