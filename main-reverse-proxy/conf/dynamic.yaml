@@ -3,23 +3,16 @@ http:
     api:
       service: api-service
       rule: "Host(`api.killerbee.com`)"
-      tls: {}
     front:
       service: front-service
       rule: "Host(`killerbee.com`)"
-      tls: {}
 
   services:
     api-service:
       loadBalancer:
         servers:
-          - url: https://ms-gateway
+          - url: http://ms-gateway
     front-service:
       loadBalancer:
         servers:
-          - url: https://front
-
-tls:
-  certificates:
-    - certFile: /traefik/conf/main-reverse-proxy-certificate.crt
-      keyFile: /traefik/conf/main-reverse-proxy.key
+          - url: http://front

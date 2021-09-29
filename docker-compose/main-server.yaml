@@ -3,7 +3,7 @@ services:
   main-reverse-proxy:
     image: traefik
     ports:
-      - 443:443
+      - 80:80
     volumes:
       - ../main-reverse-proxy/traefik.yaml:/traefik.yaml
       - ../main-reverse-proxy/conf:/traefik/conf
@@ -18,33 +18,29 @@ services:
 
   # Microservices
   ms-auth:
-    build: ../microservices/ms-auth/php
-    volumes:
-      - ../microservices/ms-auth/php/vhosts:/etc/apache2/sites-enabled
-      - ../microservices/ms-auth/:/var/www
-      - ../microservices/ms-auth/php/ssl:/etc/ssl
+    build: ../microservices/ms-auth
     restart: always
-  
-  ms-ingredient:
-    build: ../microservices/ms-ingredient/php
-    volumes:
-      - ../microservices/ms-ingredient/php/vhosts:/etc/apache2/sites-enabled
-      - ../microservices/ms-ingredient/:/var/www
-      - ../microservices/ms-ingredient/php/ssl:/etc/ssl
-    restart: always
-  
-  ms-modele:
-    build: ../microservices/ms-modele/php
-    volumes:
-      - ../microservices/ms-modele/php/vhosts:/etc/apache2/sites-enabled
-      - ../microservices/ms-modele/:/var/www
-      - ../microservices/ms-modele/php/ssl:/etc/ssl
-    restart: always
-  
-  ms-procede:
-    build: ../microservices/ms-procede/php
-    volumes:
-      - ../microservices/ms-procede/php/vhosts:/etc/apache2/sites-enabled
-      - ../microservices/ms-procede/:/var/www
-      - ../microservices/ms-procede/php/ssl:/etc/ssl
-    restart: always
+
+  # ms-ingredient:
+  #   build: ../microservices/ms-ingredient/php
+  #   volumes:
+  #     - ../microservices/ms-ingredient/php/vhosts:/etc/apache2/sites-enabled
+  #     - ../microservices/ms-ingredient/:/var/www
+  #     - ../microservices/ms-ingredient/php/ssl:/etc/ssl
+  #   restart: always
+
+  # ms-modele:
+  #   build: ../microservices/ms-modele/php
+  #   volumes:
+  #     - ../microservices/ms-modele/php/vhosts:/etc/apache2/sites-enabled
+  #     - ../microservices/ms-modele/:/var/www
+  #     - ../microservices/ms-modele/php/ssl:/etc/ssl
+  #   restart: always
+
+  # ms-procede:
+  # build: ../microservices/ms-procede/php
+  # volumes:
+  #   - ../microservices/ms-procede/php/vhosts:/etc/apache2/sites-enabled
+  #   - ../microservices/ms-procede/:/var/www
+  #   - ../microservices/ms-procede/php/ssl:/etc/ssl
+  # restart: always

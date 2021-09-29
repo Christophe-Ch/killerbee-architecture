@@ -3,7 +3,7 @@ services:
   ms-gateway:
     build: ../ms-gateway
     ports:
-      - 443:443
+      - 80:80
 
   # Microservices
   ms-auth:
@@ -13,7 +13,7 @@ services:
       - ../microservices/ms-auth/:/var/www
       - ../microservices/ms-auth/php/ssl:/etc/ssl
     restart: always
-  
+
   ms-ingredient:
     build: ../microservices/ms-ingredient/php
     volumes:
@@ -21,7 +21,7 @@ services:
       - ../microservices/ms-ingredient/:/var/www
       - ../microservices/ms-ingredient/php/ssl:/etc/ssl
     restart: always
-  
+
   ms-modele:
     build: ../microservices/ms-modele/php
     volumes:
@@ -29,7 +29,7 @@ services:
       - ../microservices/ms-modele/:/var/www
       - ../microservices/ms-modele/php/ssl:/etc/ssl
     restart: always
-  
+
   ms-procede:
     build: ../microservices/ms-procede/php
     volumes:
