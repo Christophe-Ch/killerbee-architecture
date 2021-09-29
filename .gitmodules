@@ -1,0 +1,9 @@
+[submodule "api-gateway"]
+	path = api-gateway
+	url = git@github.com:Christophe-Ch/killerbee-api-gateway.git
+[submodule "front"]
+	path = front
+	url = git@github.com:MelineAmbrosini/killerbee-front.git
+[submodule "ms-gateway"]
+	path = ms-gateway
+	url = git@github.com:Christophe-Ch/killerbee-api-gateway.git
