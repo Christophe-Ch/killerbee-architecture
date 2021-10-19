@@ -1,7 +1,6 @@
 "use strict";
 
 const bcrypt = require("bcrypt");
-const { v4 } = require("uuid");
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
@@ -9,8 +8,8 @@ module.exports = {
       "Users",
       [
         {
-          email: "admin@killerbee.com",
-          password: bcrypt.hashSync("password", 10),
+          email: process.env.DEFAULT_USERNAME,
+          password: bcrypt.hashSync(process.env.DEFAULT_PASSWORD, 10),
         },
       ],
       {}
