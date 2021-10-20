@@ -5,7 +5,7 @@ export default {
   login: async (req: Request, res: Response) => {
     try {
       return res.send(await login(req.body.email, req.body.password));
-    } catch (err) {
+    } catch (err: any) {
       console.log(
         `${Date.now()} - Login error: ${err.message} (${req.body.email}:${
           req.body.password
