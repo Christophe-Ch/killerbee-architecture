@@ -1,18 +1,14 @@
-FROM node:lts-alpine as tsc-builder
+FROM node:lts-alpine
+
 WORKDIR /usr/src/app
 
-COPY . .
-RUN yarn install && yarn run build
+COPY package*.json ./
+COPY tsconfig.json ./
+RUN npm install
 
-FROM node:lts-alpine as runtime-container
-WORKDIR /usr/src/app
+COPY src/ ./
 
-COPY --from=tsc-builder /usr/src/app/build ./build
-COPY --from=tsc-builder /usr/src/app/locales ./locales
-COPY --from=tsc-builder ["/usr/src/app/package.json", "/usr/src/app/yarn.lock", "./"]
-
-RUN yarn install --prod
+RUN npm run build
 
 EXPOSE 80
-
-CMD [ "node", "./build/main.js" ]
+CMD ["npm", "start"]
