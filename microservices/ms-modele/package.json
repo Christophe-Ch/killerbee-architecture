@@ -1,13 +1,11 @@
 {
-  "name": "ms-auth",
+  "name": "ms-modele",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "nodemon --watch ./**/*.ts --exec ts-node src/index.ts",
-    "build": "tsc --project ./",
-    "start": "node dist/app.js"
+    "watch": "nodemon --watch ./**/*.ts --exec ts-node src/index.ts"
   },
   "author": "",
   "license": "ISC",
