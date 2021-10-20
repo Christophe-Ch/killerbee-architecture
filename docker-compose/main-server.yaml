@@ -25,18 +25,10 @@ services:
     build: ../microservices/ms-ingredient
     restart: always
 
-  # ms-modele:
-  #   build: ../microservices/ms-modele/php
-  #   volumes:
-  #     - ../microservices/ms-modele/php/vhosts:/etc/apache2/sites-enabled
-  #     - ../microservices/ms-modele/:/var/www
-  #     - ../microservices/ms-modele/php/ssl:/etc/ssl
-  #   restart: always
+  ms-modele:
+    build: ../microservices/ms-ingredient
+    restart: always
 
-  # ms-procede:
-  # build: ../microservices/ms-procede/php
-  # volumes:
-  #   - ../microservices/ms-procede/php/vhosts:/etc/apache2/sites-enabled
-  #   - ../microservices/ms-procede/:/var/www
-  #   - ../microservices/ms-procede/php/ssl:/etc/ssl
-  # restart: always
+  ms-procede:
+    build: ../microservices/ms-ingredient
+    restart: always
