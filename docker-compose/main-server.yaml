@@ -3,7 +3,7 @@ services:
   main-reverse-proxy:
     image: traefik
     ports:
-      - 80:80
+      - 80:443
     volumes:
       - ../main-reverse-proxy/traefik.yaml:/traefik.yaml
       - ../main-reverse-proxy/conf:/traefik/conf
@@ -21,14 +21,14 @@ services:
     build: ../microservices/ms-auth
     restart: always
 
-  ms-ingredient:
-    build: ../microservices/ms-ingredient
-    restart: always
+  # ms-ingredient:
+  #   build: ../microservices/ms-ingredient
+  #   restart: always
 
-  ms-modele:
-    build: ../microservices/ms-ingredient
-    restart: always
+  # ms-modele:
+  #   build: ../microservices/ms-ingredient
+  #   restart: always
 
-  ms-procede:
-    build: ../microservices/ms-ingredient
-    restart: always
+  # ms-procede:
+  #   build: ../microservices/ms-ingredient
+  #   restart: always

@@ -5,7 +5,7 @@ import bcrypt from "bcrypt";
 
 export default async () => {
   await createConnection({
-    type: "mysql",
+    type: "mssql",
     host: process.env.DB_HOST,
     port: parseInt(<string>process.env.DB_PORT),
     username: process.env.DB_USERNAME,
